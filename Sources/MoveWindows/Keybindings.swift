@@ -19,11 +19,15 @@ struct Keybinding: Sendable {
     let carbonModifiers: UInt32
 }
 
+// Windows layout: Cmd+Arrow snaps (like Win+Arrow), Cmd+Shift+Arrow moves
+// between displays (like Win+Shift+Arrow). Note that plain Cmd+Arrow shadows
+// macOS text navigation (line start/end, document top/bottom) and browser
+// back/forward — use the menu bar's "Pause Shortcuts" when you need those.
 let keybindings: [HotkeyAction: Keybinding] = [
-    .snapLeft: Keybinding(keyCode: UInt32(kVK_LeftArrow), carbonModifiers: UInt32(cmdKey | shiftKey)),
-    .snapRight: Keybinding(keyCode: UInt32(kVK_RightArrow), carbonModifiers: UInt32(cmdKey | shiftKey)),
-    .snapUp: Keybinding(keyCode: UInt32(kVK_UpArrow), carbonModifiers: UInt32(cmdKey | shiftKey)),
-    .snapDown: Keybinding(keyCode: UInt32(kVK_DownArrow), carbonModifiers: UInt32(cmdKey | shiftKey)),
-    .displayNext: Keybinding(keyCode: UInt32(kVK_RightArrow), carbonModifiers: UInt32(cmdKey | optionKey | shiftKey)),
-    .displayPrev: Keybinding(keyCode: UInt32(kVK_LeftArrow), carbonModifiers: UInt32(cmdKey | optionKey | shiftKey)),
+    .snapLeft: Keybinding(keyCode: UInt32(kVK_LeftArrow), carbonModifiers: UInt32(cmdKey)),
+    .snapRight: Keybinding(keyCode: UInt32(kVK_RightArrow), carbonModifiers: UInt32(cmdKey)),
+    .snapUp: Keybinding(keyCode: UInt32(kVK_UpArrow), carbonModifiers: UInt32(cmdKey)),
+    .snapDown: Keybinding(keyCode: UInt32(kVK_DownArrow), carbonModifiers: UInt32(cmdKey)),
+    .displayNext: Keybinding(keyCode: UInt32(kVK_RightArrow), carbonModifiers: UInt32(cmdKey | shiftKey)),
+    .displayPrev: Keybinding(keyCode: UInt32(kVK_LeftArrow), carbonModifiers: UInt32(cmdKey | shiftKey)),
 ]

@@ -5,20 +5,23 @@ menu bar app — no dependencies, ~600 lines of Swift.
 
 ## Features
 
+The exact Windows layout — `⌘` plays the role of the Windows key:
+
 | Shortcut | Action |
 |---|---|
-| `⌘⇧←` / `⌘⇧→` | Snap the focused window to the left / right half |
-| `⌘⇧↑` | Maximize (fill the screen — not native fullscreen) |
-| `⌘⇧↓` | Restore the pre-maximize size |
-| `⌘⇧←/→` then `⌘⇧↑/↓` | Quarter snapping, Windows-style (e.g. Left then Up → top-left quarter) |
-| `⌘⌥⇧→` / `⌘⌥⇧←` | Throw the window to the next / previous display |
+| `⌘←` / `⌘→` | Snap the focused window to the left / right half |
+| `⌘↑` | Maximize (fill the screen — not native fullscreen) |
+| `⌘↓` | Restore the pre-maximize size |
+| `⌘←/→` then `⌘↑/↓` | Quarter snapping, Windows-style (e.g. Left then Up → top-left quarter) |
+| `⌘⇧→` / `⌘⇧←` | Throw the window to the next / previous display |
 
 Windows that are snapped re-snap pixel-perfect on the destination display;
 floating windows are rescaled proportionally.
 
-> **Heads-up:** `⌘⇧←/→` shadows "select to start/end of line" in text editors.
-> Use **Pause Shortcuts** in the menu bar icon when you need those, or change
-> the bindings (see below).
+> **Heads-up:** plain `⌘Arrow` shadows macOS text navigation (line start/end,
+> document top/bottom), browser back/forward, and Finder folder navigation —
+> globally. Use **Pause Shortcuts** in the menu bar icon when you need those,
+> or change the bindings (see below).
 
 ## Install
 
